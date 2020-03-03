@@ -212,7 +212,8 @@ class Model():
         texture_data = list(texture)
         # create vertex list
         # FIXME Maybe `add_indexed()` should be used instead
-        self._shown[position] = self.batch.add(24, GL_QUADS, self.group,
+        self._shown[position] = self.batch.add(
+            24, GL_QUADS, self.group,
             ('v3f/static', vertex_data),
             ('t2f/static', texture_data))
 
@@ -315,4 +316,3 @@ class Model():
         """
         while self.queue:
             self._dequeue()
-

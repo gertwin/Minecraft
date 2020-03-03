@@ -1,0 +1,49 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.sublime-workspace"
+			],
+			"folder_exclude_patterns":
+			[
+				".git",
+				"__pycache__"
+			],
+
+            "follow_symlinks": true,
+			"path": "."
+		}
+	],
+    "settings":
+    {
+        "anaconda_linting": true,
+        "anaconda_linting_behaviour": "always",
+        "pep257": false,
+        "python_interpreter": "python",
+        "test_command": "python -m unittest discover",
+        "use_pylint": false,
+        "validate_imports": true,
+
+        "anaconda_linter_mark_style": "squiggly_underline",
+        "anaconda_linter_phantoms": true,
+        "pep8_max_line_length": 89,
+
+        "pep8_ignore":
+        [
+            "E201",
+            "E231",
+            "E226"
+        ],
+    }
+}

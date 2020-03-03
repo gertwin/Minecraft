@@ -1,5 +1,3 @@
-# pylint: disable=E501
-
 import math
 
 from pyglet.gl import *
@@ -176,7 +174,7 @@ class Window(pyglet.window.Window):
         """
         # walking
         speed = Settings.FLYING_SPEED if self.flying else Settings.WALKING_SPEED
-        d = dt * speed # distance covered this tick.
+        d = dt * speed  # distance covered this tick.
         dx, dy, dz = self.get_motion_vector()
         # New position in space, before accounting for gravity.
         dx, dy, dz = dx * d, dy * d, dz * d
@@ -354,9 +352,9 @@ class Window(pyglet.window.Window):
             self.reticle.delete()
         x, y = self.width // 2, self.height // 2
         n = 10
-        self.reticle = pyglet.graphics.vertex_list(4,
-            ('v2i', (x - n, y, x + n, y, x, y - n, x, y + n))
-        )
+        self.reticle = pyglet.graphics.vertex_list(
+            4,
+            ('v2i', (x - n, y, x + n, y, x, y - n, x, y + n)))
 
     def set_2d(self):
         """ Configure OpenGL to draw in 2d.
